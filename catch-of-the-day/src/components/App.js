@@ -5,9 +5,19 @@ import Inventory from './Inventory';
 
 
 class App extends Component {
-    constructor(props) {
-        super(props);
+    state = {
+        fishes: {},
+        order: {}
     }
+
+    addFish = (fish) => {
+        console.log("added fish: ");
+        console.log(fish);
+        const fishes = {...this.state.fishes};
+        fishes[`fish${Date.now()}`] = fish;
+        this.setState({ fishes });
+    }
+
     render(){
         return(
             <div className="catch-of-the-day">
@@ -15,7 +25,7 @@ class App extends Component {
                     <Header tagline="Fresh Seafood Market"/>
                 </div>
                 <Order />
-                <Inventory />
+                <Inventory addFish={this.addFish}/>
             </div>
         )
     }
