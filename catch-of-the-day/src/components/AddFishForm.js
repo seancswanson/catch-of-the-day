@@ -21,7 +21,7 @@ class AddFishForm extends Component {
         e.currentTarget.reset();
     }
     render() {
-        return(
+        return (
             <form className="fish-edit" onSubmit={this.createFish}>
                 <input ref={this.nameRef} name="name" type="text" placeholder="Name" />
                 <input ref={this.priceRef} name="price" type="text" placeholder="Price" />

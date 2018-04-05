@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
   myInput = React.createRef();
@@ -17,16 +17,16 @@ class StorePicker extends Component {
   }
 
 
-  render(){
+  render() {
     return (
       <Fragment>
-      <form className="store-selector" onSubmit={this.goToStore} >
-        <h2>Please Enter A Store</h2>
-        <input ref={this.myInput} type="text" required placeholder="Store name" defaultValue={getFunName()}/>
-        <button type="submit" >Visit Store →</button>
-      </form>
+        <form className="store-selector" onSubmit={this.goToStore} >
+          <h2>Please Enter A Store</h2>
+          <input ref={this.myInput} type="text" required placeholder="Store name" defaultValue={getFunName()} />
+          <button type="submit" >Visit Store →</button>
+        </form>
       </Fragment>
-      )
+    )
   }
 }
 
